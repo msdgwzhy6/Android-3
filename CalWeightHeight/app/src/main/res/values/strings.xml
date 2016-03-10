@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">标准身高 ikok</string>
+    <string name="app_title">个人标准身高计算器</string>
+    <string name="input_weight">请输入您的体重：</string>
+    <string name="select_sex">请选择您的性别：</string>
+    <string name="man">男</string>
+    <string name="women">女</string>
+    <string name="cal">计 算</string>
+</resources>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="@string/app_title"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/input_weight"
+            android:paddingLeft="20dp"
+            />
+
+        <EditText
+            android:id="@+id/weightText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="kg"
+            android:paddingRight="20dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="@string/select_sex"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            />
+        <RadioGroup
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            >
+
+            <RadioButton
+                android:id="@+id/isMan"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/man"/>
+            <RadioButton
+                android:id="@+id/isWomen"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/women"/>
+
+        </RadioGroup>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/calBtn"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="@string/cal"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        />
+
+
+</LinearLayout>
