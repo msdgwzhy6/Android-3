@@ -3,6 +3,7 @@ package com.ikok.notepad.Activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 
 import com.ikok.notepad.R;
@@ -17,6 +18,7 @@ public class AboutActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.about_me);
 
         mBackBtn = (ImageButton) findViewById(R.id.about_back_btn);

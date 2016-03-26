@@ -7,8 +7,8 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main_activity);
 
         SharedPreferences sharedPreferences = getSharedPreferences("is_first_in_data",MODE_PRIVATE);
@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Note note = (Note) adapterView.getItemAtPosition(i);
-                Log.d("Anonymous", "点击ListView获取的note id: " + note.getId());
+//                Log.d("Anonymous", "点击ListView获取的note id: " + note.getId());
                 Intent intent = new Intent(MainActivity.this, UpdateOrReadActivity.class);
                 intent.putExtra("note_id", note.getId());
                 startActivity(intent);
@@ -89,7 +89,7 @@ public class MainActivity extends Activity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 final Note note = (Note) parent.getItemAtPosition(position);
-                Log.d("Anonymous", "长按ListView获取的note id: " + note.getId());
+//                Log.d("Anonymous", "长按ListView获取的note id: " + note.getId());
                 /**
                  * 长按提示是否删除
                  */
@@ -100,7 +100,6 @@ public class MainActivity extends Activity {
 
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                // TODO Auto-generated method stub
                                 new DeleteAsyncTask(mNoteDB).execute(note.getId());
                                 new NewAsyncTask().execute();
                             }

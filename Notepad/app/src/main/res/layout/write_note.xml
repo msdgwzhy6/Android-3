@@ -3,7 +3,7 @@
     android:id="@+id/screen_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/note_bg"
+    android:background="@drawable/repeat_bg"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -40,6 +40,8 @@
         android:layout_height="wrap_content"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
+        android:textColor="#333"
+        android:textCursorDrawable="@null"
         android:background="@null"/>
 
 </LinearLayout>

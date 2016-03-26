@@ -18,7 +18,8 @@
         <activity android:name=".Activity.UpdateOrReadActivity">
 
         </activity>
-        <activity android:name=".Activity.TransitionActivity">
+        <activity android:name=".Activity.TransitionActivity"
+                  android:theme="@style/EmptyTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -27,6 +28,9 @@
        <activity android:name=".Activity.AboutActivity">
 
        </activity>
+        <activity android:name=".Activity.GuideActivity">
+            
+        </activity>
     </application>
 
 </manifest>

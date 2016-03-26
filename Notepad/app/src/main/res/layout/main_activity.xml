@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/repeat_bg"
     android:orientation="vertical">
 
     <TextView
@@ -11,6 +12,7 @@
         android:textSize="16sp"
         android:gravity="center"
         android:text="@string/app_title"
+        android:textColor="#333"
         />
 
     <ListView
@@ -44,6 +46,7 @@
             android:layout_height="30dp"
             android:paddingTop="2dp"
             android:textSize="18sp"
+            android:textColor="#333"
             android:layout_centerInParent="true"
             android:text="@string/app_title"
             />

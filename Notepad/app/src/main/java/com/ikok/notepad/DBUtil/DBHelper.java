@@ -3,7 +3,6 @@ package com.ikok.notepad.DBUtil;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 /**
  * Created by Anonymous on 2016/3/24.
@@ -28,7 +27,7 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_NOTE);
-        Toast.makeText(mContext,"Created",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mContext,"Created",Toast.LENGTH_SHORT).show();
     }
 
     @Override

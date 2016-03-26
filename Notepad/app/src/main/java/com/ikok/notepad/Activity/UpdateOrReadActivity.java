@@ -8,11 +8,11 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.ikok.notepad.DBUtil.NoteDB;
 import com.ikok.notepad.Entity.Note;
@@ -51,6 +51,7 @@ public class UpdateOrReadActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.write_note);
         /**
          * 获取传递过来的note对象
@@ -90,11 +91,7 @@ public class UpdateOrReadActivity extends Activity {
         mBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (mContent.getText().toString().equals(originData)) {
-                    finish();
-                } else {
-                    updateDataOrNot();
-                }
+                updateDataOrNot();
             }
         });
         /**
@@ -106,14 +103,13 @@ public class UpdateOrReadActivity extends Activity {
                 if (mContent.getText().toString().trim().equals("")){
 //                    Log.d("Anonymous","进入判断为空函数");
                     new DeleteAsyncTask(mNoteDB).execute(noteId);
-                    Toast.makeText(UpdateOrReadActivity.this, "该文本内容为空，已帮您删除该文本!", Toast.LENGTH_SHORT).show();
                     finish();
                 } else if (mContent.getText().toString().equals(originData)) {
                     finish();
                 } else {
 //                    Log.d("Anonymous","进入判断不为空函数");
                     new UpdateAsyncTask().execute();
-                    Toast.makeText(UpdateOrReadActivity.this, "修改成功!", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(UpdateOrReadActivity.this, "修改成功!", Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
@@ -185,7 +181,6 @@ public class UpdateOrReadActivity extends Activity {
 
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            // TODO Auto-generated method stub
                             new UpdateAsyncTask().execute();
                             finish();
                         }
@@ -207,10 +202,6 @@ public class UpdateOrReadActivity extends Activity {
      */
     @Override
     public void onBackPressed() {
-        if (mContent.getText().toString().equals(originData)) {
-            finish();
-        } else {
-            updateDataOrNot();
-        }
+        updateDataOrNot();
     }
 }
