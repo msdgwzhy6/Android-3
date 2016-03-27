@@ -47,10 +47,7 @@ public class MainActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main_activity);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("is_first_in_data",MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putBoolean("isFirstIn",false);
-        editor.commit();
+
 
         initView();
         new NewAsyncTask().execute();

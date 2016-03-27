@@ -29,7 +29,7 @@
 
        </activity>
         <activity android:name=".Activity.GuideActivity">
-            
+
         </activity>
     </application>
 

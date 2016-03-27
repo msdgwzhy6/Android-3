@@ -5,4 +5,5 @@
     <string name="app_name_version">记事本 v1.0</string>
     <string name="app_author">作者：someone_xiaole</string>
     <string name="app_author_email">邮箱：someone_xiaole@qq.com</string>
+    <string name="into_app">进入记事本</string>
 </resources>
